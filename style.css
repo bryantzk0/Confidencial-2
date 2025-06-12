@@ -1,0 +1,127 @@
+body.dark-theme {
+  background: #0d1117;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.titulo {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #00bfff;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.emoji-coracao {
+  font-size: 5rem;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+.emoji-coracao:hover {
+  transform: scale(1.1);
+}
+
+.galeria {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.foto {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00bfff;
+  cursor: pointer;
+}
+
+button#btnLovers {
+  background-color: #00bfff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00bfff;
+}
+
+.carta {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #00bfff;
+  font-size: 1.1em;
+}
+  /* Corações flutuando no fundo */
+.coracoes-container::before {
+  content: "💙💙💙💙💙";
+  font-size: 2rem;
+  position: fixed;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: coracoesCaindo 10s infinite linear;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+@keyframes coracoesCaindo {
+  0% { transform: translateX(-50%) translateY(0); opacity: 0.4; }
+  100% { transform: translateX(-50%) translateY(100vh); opacity: 0; }
+}
+
+/* Fade-in suave */
+.fade-in {
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Botão Lovers com efeito pulsante */
+.pulse {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 191, 255, 0.6); }
+  70% { box-shadow: 0 0 0 20px rgba(0, 191, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 191, 255, 0); }
+}
+
+/* Carta mais bonita */
+.carta-romantica {
+  background: rgba(255, 255, 255, 0.95);
+  color: #000;
+  border: 2px solid #00bfff;
+  box-shadow: 0 0 30px #00bfff;
+  font-family: 'Georgia', serif;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+/* Galeria com hover */
+.foto {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.foto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00bfff;
+}
